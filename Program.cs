@@ -1,30 +1,22 @@
-﻿using ConsultaCep.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConsultaCep
 {
-    internal class Program
+    internal static class Program
     {
-        static async Task Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-
-            Console.WriteLine("Informe o Cep: ");
-            String cep = Console.ReadLine();
-
-            AddressServices addressServices = new AddressServices();
-
-            Address address = await addressServices.Integracao(cep);
-
-            if (!address.Verification)
-            {
-                Console.WriteLine(address);
-            }
-
-            Console.ReadKey();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }

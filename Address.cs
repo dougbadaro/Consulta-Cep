@@ -8,6 +8,7 @@ namespace ConsultaCep
 {
     internal class Address
     {
+
         public String Cep { get; set; }
         public String Uf { get; set; }
         public String Localidade { get; set; }
@@ -17,7 +18,7 @@ namespace ConsultaCep
 
         public override string ToString()
         {
-            return $"CEP: {Cep}\nUF: {Uf}\nCidade: {Localidade}\nBairro: {Bairro}\nEndereco: {Logradouro}\n";
+            return $"{Cep}";
         }
     }
 }
